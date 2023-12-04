@@ -14,21 +14,21 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: ColorsPattern.black,
       // backgroundColor: Colors.amber,
-      body: Padding(
-        padding: const EdgeInsets.only(left: 24.0),
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: 0.0,
-              right: -30.0,
-              child: Image.asset(
-                "assets/decoration.png",
-                height: 300,
-                width: 200,
-                // alignment: Alignment.bottomLeft,
-              ),
+      body: Stack(
+        children: [
+          Positioned(
+            bottom: 0.0,
+            right: -20.0,
+            child: Image.asset(
+              "assets/decoration.png",
+              height: 300,
+              width: 180,
+              // alignment: Alignment.bottomLeft,
             ),
-            Form(
+          ),
+          Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Form(
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -126,8 +126,8 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

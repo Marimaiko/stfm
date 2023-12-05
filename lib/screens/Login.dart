@@ -23,7 +23,6 @@ class _LoginState extends State<Login> {
               "assets/decoration.png",
               height: 300,
               width: 180,
-              // alignment: Alignment.bottomLeft,
             ),
           ),
           Padding(

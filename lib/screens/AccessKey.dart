@@ -43,7 +43,7 @@ class _AccessKeyState extends State<AccessKey> {
               const SizedBox(
                 height: 48,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: TextButton(

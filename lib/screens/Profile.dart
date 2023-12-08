@@ -15,10 +15,13 @@ class _ProfileState extends State<Profile> {
       body: Column(
         children: [
           Container(
-            height: 180.0,
-            // decoration:
-            //     BoxDecoration(borderRadius: BorderRadius.circular(50.0)),
-            color: Colors.black,
+            height: 120.0,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0)),
+              color: Colors.black,
+            ),
             child: Center(
                 child: Image.asset(
               "assets/logo_stfm.png",
@@ -36,8 +39,8 @@ class _ProfileState extends State<Profile> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: 100.0,
-                    height: 100.0,
+                    width: 80.0,
+                    height: 80.0,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.black, width: 1.0)),
@@ -46,88 +49,89 @@ class _ProfileState extends State<Profile> {
                       backgroundColor: Colors.white,
                       child: Icon(
                         Icons.person,
-                        size: 80.0,
+                        size: 60.0,
                         color: ColorsPattern.yellow,
                       ),
                     ),
                   ),
                   const Text(
                     "Perfil",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 48),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 42),
+                  ),
+                  const SizedBox(
+                    height: 18,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(right: 24.0, left: 24.0),
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
                       label: Text("Nome"),
                       labelStyle: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    style: const TextStyle(color: ColorsPattern.gold),
+                    // style: const TextStyle(color: ColorsPattern.gold),
                   ),
+                  const SizedBox(height: 12),
                   TextFormField(
                     decoration: const InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
                       label: Text("Usuário"),
                       labelStyle: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    style: const TextStyle(color: ColorsPattern.gold),
+                    // style: const TextStyle(color: ColorsPattern.gold),
                   ),
+                  const SizedBox(height: 12),
                   TextFormField(
                     decoration: const InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
                       label: Text("Senha"),
                       labelStyle: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    style: const TextStyle(color: ColorsPattern.gold),
+                    // style: const TextStyle(color: ColorsPattern.gold),
                   ),
+                  const SizedBox(height: 12),
                   TextFormField(
                     decoration: const InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
                       label: Text("Email"),
                       labelStyle: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    style: const TextStyle(color: ColorsPattern.gold),
+                    // style: const TextStyle(color: ColorsPattern.gold),
                   ),
                   const SizedBox(
                     height: 48,
                   ),
-                  Container(
+                  SizedBox(
                     width: 300,
                     height: 50,
                     child: TextButton(
                       onPressed: () {},
                       style: ButtonStyle(
                         side: MaterialStateProperty.all(
-                          const BorderSide(
-                              color: ColorsPattern.black, width: 1.0),
+                          const BorderSide(color: Colors.black, width: 1.0),
                         ),
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(24.0))),
                       ),
                       child: const Text(
-                        "Entrar",
+                        "Continuar",
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
@@ -135,7 +139,7 @@ class _ProfileState extends State<Profile> {
                   TextButton(
                     onPressed: () {},
                     child: const Text("Esqueceu a senha?",
-                        style: TextStyle(color: ColorsPattern.gold)),
+                        style: TextStyle(color: Colors.black)),
                   ),
                 ],
               ),

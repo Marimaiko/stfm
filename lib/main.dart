@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stfm_app/screens/AccessKey.dart';
 import 'package:stfm_app/screens/Login.dart';
+import 'package:stfm_app/screens/Profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: AccessKey(),
+      home: Profile(),
     );
   }
 }

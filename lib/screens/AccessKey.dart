@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stfm_app/_core/colors_pattern.dart';
+import 'package:stfm_app/screens/Profile.dart';
 
 class AccessKey extends StatefulWidget {
   const AccessKey({super.key});
@@ -47,7 +48,12 @@ class _AccessKeyState extends State<AccessKey> {
                 width: 300,
                 height: 50,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Profile()),
+                    );
+                  },
                   style: ButtonStyle(
                     side: MaterialStateProperty.all(
                       const BorderSide(color: ColorsPattern.gold, width: 1.0),

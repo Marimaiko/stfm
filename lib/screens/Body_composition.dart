@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:stfm_app/widget/ProfileHeader.dart';
 
-class Body_composition extends StatefulWidget {
-  const Body_composition({super.key});
+class BodyComposition extends StatefulWidget {
+  const BodyComposition({super.key});
 
   @override
-  State<Body_composition> createState() => _Body_compositionState();
+  State<BodyComposition> createState() => _BodyCompositionState();
 }
 
-class _Body_compositionState extends State<Body_composition> {
+class _BodyCompositionState extends State<BodyComposition> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
         child: ListView(
-          children: [],
+          children: [
+            const ProfileHeader(title: "Olá usuário"),
+            
+          ],
         ),
       ),
     );

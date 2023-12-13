@@ -1,37 +1,48 @@
 import 'package:flutter/material.dart';
 
-class ProfileButton extends StatefulWidget {
-  final List<String> segments;
-  final Function(int) onValueChanged;
+enum Sections { Measure, Evolution, Menu }
 
-  ProfileButton({required this.segments, required this.onValueChanged});
+class ProfileButtons extends StatefulWidget {
+  const ProfileButtons({Key? key}) : super(key: key);
 
   @override
-  _ProfileButtonState createState() => _ProfileButtonState();
+  State<ProfileButtons> createState() => _ProfileButtonsState();
 }
 
-class _ProfileButtonState extends State<ProfileButton> {
-  int selectedIndex = 0;
+class _ProfileButtonsState extends State<ProfileButtons> {
+  Sections _selectedSection = Sections.Measure;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(widget.segments.length, (index) {
-        return ElevatedButton(
-          onPressed: () {
-            setState(() {
-              selectedIndex = index;
-            });
-            widget.onValueChanged(index);
-          },
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(
-              index == selectedIndex ? Colors.blue : Colors.grey,
-            ),
-          ),
-          child: Text(widget.segments[index]),
-        );
-      }),
-    );
+    return SegmentedButton<Sections>(
+        segments: <ButtonSegment<Sections>>[
+          const ButtonSegment<Sections>(
+              value: Sections.Measure, label: Text("Minhas medidas")),
+          const ButtonSegment(
+              value: Sections.Evolution, label: Text("Minha evolução")),
+          const ButtonSegment(value: Sections.Menu, label: Text("Meu cardápio"))
+        ],
+        selected: <Sections>{
+          _selectedSection
+        },
+        onSelectionChanged: (Set<Sections> newSelection) {
+          setState(() {
+            _selectedSection = newSelection.first;
+          });
+        },
+        style: ButtonStyle(
+          foregroundColor:
+              MaterialStateColor.resolveWith((Set<MaterialState> states) {
+            return states.contains(MaterialState.selected)
+                ? Colors.black
+                : Colors.yellow;
+          }),
+          backgroundColor:
+              MaterialStateColor.resolveWith((Set<MaterialState> states) {
+            return states.contains(MaterialState.selected)
+                ? Colors.yellow
+                : Colors.black;
+          }),
+        ));
   }
 }

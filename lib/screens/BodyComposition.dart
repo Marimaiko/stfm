@@ -17,7 +17,7 @@ class _BodyCompositionState extends State<BodyComposition> {
         child: ListView(
           children: [
             const ProfileHeader(title: "Olá usuário"),
-            
+            Text("alguma coissaaaaa")
           ],
         ),
       ),

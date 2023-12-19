@@ -5,7 +5,7 @@ import 'package:stfm_app/widget/ProfileButtons.dart';
 class ProfileHeader extends StatelessWidget {
   final String title;
 
-  const ProfileHeader({Key? key, required this.title}) : super(key: key);
+  const ProfileHeader({Key? key, required this.title});
 
   @override
   Widget build(BuildContext context) {

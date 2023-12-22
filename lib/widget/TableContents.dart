@@ -3,24 +3,38 @@ import 'package:stfm_app/_core/colors_pattern.dart';
 
 class TableContents extends StatelessWidget {
   Widget avaliationBackground(int value, String text) {
-    Color backgroundColor = value < 10 ? Colors.green : Colors.red;
+    Color color = value < 10 ? Colors.green : ColorsPattern.darkRed;
 
     return Container(
-      color: backgroundColor,
+      color: color,
+      // padding: EdgeInsets.all(16),
+      height: 50,
+      width: 120,
+
+      child: const Text(
+        "ruim",
+        textAlign: TextAlign.center, 
+        style: TextStyle(
+          color: ColorsPattern.darkgold,
+          fontWeight: FontWeight.bold,
+          fontSize: 24,
+        ),
+      ),
     );
   }
 
   final String description;
   final String? reference;
-  final String result;
-  final String avaliation;
+  final int result;
+  // final String avaliation;
 
-  const TableContents(
-      {super.key,
-      required this.description,
-      this.reference,
-      required this.result,
-      required this.avaliation});
+  const TableContents({
+    super.key,
+    required this.description,
+    this.reference,
+    required this.result,
+    // required this.avaliation
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -61,20 +75,21 @@ class TableContents extends StatelessWidget {
                 ],
               ),
               Text(
-                result,
+                result.toString(),
                 style: const TextStyle(
                     color: ColorsPattern.darkgold, fontSize: 24),
               ),
               Container(
-                padding: EdgeInsets.all(16),
-                color: ColorsPattern.darkRed,
-                child: Text(
-                  avaliation,
-                  style: const TextStyle(
-                    color: ColorsPattern.darkgold,
-                    fontSize: 24,
-                  ),
-                ),
+                // padding: EdgeInsets.all(16),
+                // color: ColorsPattern.darkRed,
+                child:
+                    // child: Text(
+                    avaliationBackground(result, "Good"),
+                // style: const TextStyle(
+                //   color: ColorsPattern.darkgold,
+                //   fontSize: 24,
+                // ),
+                // ),
               ),
             ],
           ),

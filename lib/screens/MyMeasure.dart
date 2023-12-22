@@ -87,24 +87,24 @@ class _MyMeasureState extends State<MyMeasure> {
               height: 12,
             ),
             const TableContents(
-                description: "Peso",
-                reference: "47,4 ~ 64,0 Kg",
-                result: "81,7 Kg",
-                avaliation: "Muito alto"),
-            const TableContents(
-                description: "Músculo \nEsquelético",
-                reference: "33,3 ~ 39,3 %",
-                result: "48,7%",
-                avaliation: "Excelente"),
-            const TableContents(
-                description: "Massa \nMuscular",
-                reference: "34,2~50,5Kg",
-                result: "72,8%",
-                avaliation: "Ótimo"),
-            const TableContents(
-                description: "Idade \nCorporal",
-                result: "81,7Kg",
-                avaliation: "+23 anos")
+              description: "Peso",
+              reference: "47,4 ~ 64,0 Kg",
+              result: 81,
+            ),
+            // const TableContents(
+            //     description: "Músculo \nEsquelético",
+            //     reference: "33,3 ~ 39,3 %",
+            //     result: "48,7%",
+            //     avaliation: "Excelente"),
+            // const TableContents(
+            //     description: "Massa \nMuscular",
+            //     reference: "34,2~50,5Kg",
+            //     result: "72,8%",
+            //     avaliation: "Ótimo"),
+            // const TableContents(
+            //     description: "Idade \nCorporal",
+            //     result: "81,7Kg",
+            //     avaliation: "+23 anos")
           ],
         ),
       ),

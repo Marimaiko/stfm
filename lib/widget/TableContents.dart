@@ -11,8 +11,8 @@ class TableContents extends StatelessWidget {
       height: 50,
       width: 120,
 
-      child: const Text(
-        "ruim",
+      child: Text(
+        avaliation ?? '',
         textAlign: TextAlign.center, 
         style: TextStyle(
           color: ColorsPattern.darkgold,
@@ -26,14 +26,14 @@ class TableContents extends StatelessWidget {
   final String description;
   final String? reference;
   final int result;
-  // final String avaliation;
+  final String? avaliation;
 
   const TableContents({
     super.key,
     required this.description,
     this.reference,
     required this.result,
-    // required this.avaliation
+    this.avaliation
   });
 
   @override

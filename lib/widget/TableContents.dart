@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stfm_app/_core/colors_pattern.dart';
 
 class TableContents extends StatelessWidget {
-  Widget avaliationBackground(int value, String text) {
+  Widget avaliationBackground(double value, String text) {
     Color color = value < 10 ? Colors.green : ColorsPattern.darkRed;
 
     return Container(
@@ -25,7 +25,7 @@ class TableContents extends StatelessWidget {
 
   final String description;
   final String? reference;
-  final int result;
+  final double result;
   final String? avaliation;
 
   const TableContents({

@@ -89,22 +89,80 @@ class _MyMeasureState extends State<MyMeasure> {
             const TableContents(
               description: "Peso",
               reference: "47,4 ~ 64,0 Kg",
-              result: 81, 
+              result: 81,
+              avaliation: "Muito alto",
             ),
-             const TableContents(
+            const TableContents(
                 description: "Músculo \nEsquelético",
                 reference: "33,3 ~ 39,3 %",
                 result: 48,
                 avaliation: "Excelente"),
-             const TableContents(
+            const TableContents(
                 description: "Massa \nMuscular",
                 reference: "34,2~50,5Kg",
                 result: 72,
                 avaliation: "Ótimo"),
-             const TableContents(
+            const TableContents(
                 description: "Idade \nCorporal",
                 result: 81,
-                avaliation: "+23 anos")
+                avaliation: "+23 anos"),
+            const Divider(color: ColorsPattern.darkgold),
+            const SizedBox(
+              height: 16,
+            ),
+            const Text(
+              "Diagnóstico da Obesidade",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: ColorsPattern.darkgold),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            // const InformationCollumnsTitle(),
+            TableContents(
+              description: "IMC",
+              result: 32,
+              reference: "18,5~25 Kg/m2",
+              avaliation: "Muito alto",
+            ),
+            TableContents(
+              description: "Gordura Corporal",
+              result: 23,
+              reference: "16.0 ~ 21.0 %",
+              avaliation: "Acima",
+            ),
+            TableContents(
+              description: "Gordura visceral",
+              result: 17,
+              reference: "1~9",
+              avaliation: "Muito alto",
+            ),
+            TableContents(
+              description: "Idade corporal",
+              result: 50,
+              avaliation: "Acima",
+            ),
+            TableContents(
+              description: "Relação \ncintura \nquadril",
+              result: 0.95,
+              avaliation: "Risco alto",
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            const Text(
+              "Outros indicadores",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: ColorsPattern.darkgold),
+            ),
+        TableContents(description: "Pressão \nArterial", result: 130, reference: "120/80 mmHg", avaliation: "Pré-alta",),
+        TableContents(description: "Gordura \ncorporal", result: 50, reference: "16 ~ 21 %", avaliation: "Abaixo",) 
           ],
         ),
       ),

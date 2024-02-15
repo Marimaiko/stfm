@@ -7,7 +7,6 @@ class TableContents extends StatelessWidget {
 
     return Container(
       color: color,
-      // padding: EdgeInsets.all(16),
       height: 50,
       width: 120,
 

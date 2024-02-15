@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stfm_app/_core/colors_pattern.dart';
 import 'package:stfm_app/widget/InformationCollumnsTitle.dart';
+import 'package:stfm_app/widget/MeasureCell.dart';
 import 'package:stfm_app/widget/ProfileHeader.dart';
 import 'package:stfm_app/widget/TableContents.dart';
 
@@ -129,24 +130,25 @@ class _MyMeasureState extends State<MyMeasure> {
               avaliation: "Muito alto",
             ),
             TableContents(
-              description: "Gordura Corporal",
+              description: "Gordura \nCorporal",
               result: 23,
               reference: "16.0 ~ 21.0 %",
               avaliation: "Acima",
             ),
             TableContents(
-              description: "Gordura visceral",
+              description: "Gordura \nvisceral",
               result: 17,
               reference: "1~9",
               avaliation: "Muito alto",
             ),
             TableContents(
-              description: "Idade corporal",
+              description: "Idade \nCorporal",
               result: 50,
               avaliation: "Acima",
             ),
             TableContents(
-              description: "Relação \ncintura \nquadril",
+              description: "Relação \ncintura",
+              //               description: "Relação \ncintura \nquadril",
               result: 0.95,
               avaliation: "Risco alto",
             ),
@@ -161,8 +163,72 @@ class _MyMeasureState extends State<MyMeasure> {
                   fontWeight: FontWeight.bold,
                   color: ColorsPattern.darkgold),
             ),
-        TableContents(description: "Pressão \nArterial", result: 130, reference: "120/80 mmHg", avaliation: "Pré-alta",),
-        TableContents(description: "Gordura \ncorporal", result: 50, reference: "16 ~ 21 %", avaliation: "Abaixo",) 
+            const SizedBox(
+              height: 16,
+            ),
+            TableContents(
+              description: "Pressão \nArterial",
+              result: 130,
+              reference: "120/80 mmHg",
+              avaliation: "Pré-alta",
+            ),
+            TableContents(
+              description: "Gordura \ncorporal",
+              result: 50,
+              reference: "16 ~ 21 %",
+              avaliation: "Abaixo",
+            ),
+            const SizedBox(
+              height: 96,
+            ),
+            Text(
+              "Medidas",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: ColorsPattern.darkgold),
+            ),
+            const SizedBox(height: 16.0),
+            MeasureCell(
+                imageUrl: "assets/peito.png",
+                text1: "Data \n00/00/00",
+                text2: "Medida \n104cm"),
+            const SizedBox(height: 8.0),
+            MeasureCell(
+                imageUrl: "assets/abdomen.png",
+                text1: "Data \n00/00/00",
+                text2: "Medida \n104cm"),
+            const SizedBox(height: 8.0),
+            MeasureCell(
+                imageUrl: "assets/cintura.png",
+                text1: "Data \n00/00/00",
+                text2: "Medida \n104cm"),
+            const SizedBox(height: 8.0),
+            MeasureCell(
+                imageUrl: "assets/quadril.png",
+                text1: "Data \n00/00/00",
+                text2: "Medida \n104cm"),
+            const SizedBox(height: 8.0),
+            MeasureCell(
+                imageUrl: "assets/braçoDir.png",
+                text1: "Data \n00/00/00",
+                text2: "Medida \n104cm"),
+            const SizedBox(height: 16.0),
+            MeasureCell(
+                imageUrl: "assets/braçoEsq.png",
+                text1: "Data \n00/00/00",
+                text2: "Medida \n104cm"),
+            const SizedBox(height: 16.0),
+            MeasureCell(
+                imageUrl: "assets/pernaDir.png",
+                text1: "Data \n00/00/00",
+                text2: "Medida \n104cm"),
+            const SizedBox(height: 16.0),
+            MeasureCell(
+                imageUrl: "assets/pernaEsq.png",
+                text1: "Data \n00/00/00",
+                text2: "Medida \n104cm"),
           ],
         ),
       ),

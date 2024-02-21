@@ -2,64 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:stfm_app/_core/colors_pattern.dart';
 
 class TableContents extends StatelessWidget {
-  Widget avaliationBackground(double value, String text) {
-    Color color = value < 10 ? Colors.green : ColorsPattern.darkRed;
-
-    return Container(
-      color: color,
-      height: 50,
-      width: 120,
-
-      child: Text(
-        avaliation ?? '',
-        textAlign: TextAlign.center, 
-        style: TextStyle(
-          color: ColorsPattern.darkgold,
-          fontWeight: FontWeight.bold,
-          fontSize: 24,
-        ),
-      ),
-    );
-  }
-
   final String description;
   final String? reference;
   final double result;
   final String? avaliation;
 
-  const TableContents({
-    super.key,
-    required this.description,
-    this.reference,
-    required this.result,
-    this.avaliation
-  });
+  const TableContents(
+      {Key? key,
+      required this.description,
+      this.reference,
+      required this.result,
+      this.avaliation})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
         children: [
-          const Divider(color: ColorsPattern.darkgold),
-          const SizedBox(
-            height: 12,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // Coluna 1: Descrição
+          Expanded(
+              flex: 2,
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     description,
-                    overflow: TextOverflow.clip,
-                    maxLines: 2,
-                    style: const TextStyle(
-                      color: ColorsPattern.darkgold,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                    ),
+                    style: TextStyle(
+                        color: ColorsPattern.darkgold,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24),
                   ),
                   const SizedBox(
                     height: 8,
@@ -72,29 +45,37 @@ class TableContents extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   )
                 ],
-              ),
-              Text(
-                result.toString(),
-                style: const TextStyle(
-                    color: ColorsPattern.darkgold, fontSize: 24),
-              ),
-              Container(
-                // padding: EdgeInsets.all(16),
-                // color: ColorsPattern.darkRed,
-                child:
-                    // child: Text(
-                    avaliationBackground(result, "Good"),
-                // style: const TextStyle(
-                //   color: ColorsPattern.darkgold,
-                //   fontSize: 24,
-                // ),
-                // ),
-              ),
-            ],
+              )),
+          const SizedBox(width: 32.0), // Espaçamento entre as colunas
+
+          // Coluna 2: Resultado
+          Expanded(
+            flex: 1,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  result.toString(),
+                  style:
+                      TextStyle(fontSize: 24.0, color: ColorsPattern.darkgold),
+                ),
+                const SizedBox(height: 8.0),
+              ],
+            ),
           ),
-          const SizedBox(
-            height: 12,
-          )
+          const SizedBox(width: 10.0), // Espaçamento entre as colunas
+
+          // Coluna 3: Avaliação
+          Expanded(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.all(12.0),
+                color: ColorsPattern.darkRed,
+                child: Text(
+                  avaliation.toString(),
+                  style: TextStyle(color: ColorsPattern.darkgold, fontSize: 24),
+                ),
+              )),
         ],
       ),
     );

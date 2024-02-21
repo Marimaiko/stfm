@@ -1,41 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:stfm_app/_core/colors_pattern.dart';
-
-// class MeasureCell extends StatelessWidget {
-//   final String date;
-//   final double measure;
-
-//   const MeasureCell({super.key, required this.date, required this.measure});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         color: Colors.amber,
-//         height: 50,
-//         width: 120,
-//         child: Column(
-//           children: [
-//             Row(
-//               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: [
-//                 Column(
-//                   children: [
-//                     Text(
-//                       "Tórax",
-//                       style: TextStyle(
-//                           color: ColorsPattern.darkgold,
-//                           fontWeight: FontWeight.bold,
-//                           fontSize: 24),
-//                     )
-//                   ],
-//                 )
-//               ],
-//             )
-//           ],
-//         ));
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:stfm_app/_core/colors_pattern.dart';
 
@@ -76,7 +38,8 @@ class MeasureCell extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  text1,
+                  "Data \n$text1",
+                  // text1,
                   style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -96,7 +59,7 @@ class MeasureCell extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end ,
               children: [
                 Text(
-                  text2,
+                  "Medida \n$text2",
                   style: TextStyle(
                       fontSize: 18.0,
                       color: ColorsPattern.yellow,

@@ -16,10 +16,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: PieChartSample(
-      value1: 30,
-      value2: 70,
-    ));
+    return MaterialApp(home: ColumnChartSample());
   }
 }

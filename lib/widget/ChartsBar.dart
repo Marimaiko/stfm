@@ -1,73 +1,63 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-class BarChartSample extends StatelessWidget {
+class ColumnChartSample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Gráfico de Barras'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: BarChart(
-          BarChartData(
-            alignment: BarChartAlignment.center,
-            maxY: 100,
-            // barTouchData: BarTouchData(
-            //   touchTooltipData: BarTouchTooltipData(
-            //     tooltipBgColor: Colors.blueGrey,
-            //     getTooltipItem: (_a, _b, _c, _d) => null,
-            //   ),
-            // touchCallback: (response) {
-            //   // Aqui você pode lidar com toques no gráfico, se desejar
-            // },
-            // ),
-            titlesData: FlTitlesData(
-              leftTitles: SideTitles(showTitles: true),
-              bottomTitles: SideTitles(showTitles: true),
-            ),
-            borderData: FlBorderData(
-              show: true,
-              border: Border.all(color: const Color(0xff37434d), width: 1),
-            ),
-            barGroups: [
-              // BarChartGroupData(
-              //   x: 0,
-              //   barRods: [
-              //     BarChartRodData(
-              //       y: 30,
-              //       colors: [Colors.blue],
-              //     ),
-              //   ],
-              //   showingTooltipIndicators: [0],
+      // backgroundColor: Colors.black,
+      body: Center(
+        child: SizedBox(
+          width: 500,
+          height: 500,
+          child: BarChart(
+            BarChartData(
+              alignment: BarChartAlignment.center,
+              maxY: 100, // Valor máximo no eixo y
+              titlesData: FlTitlesData(
+                bottomTitles: SideTitles(
+                  showTitles: true,
+                  getTitles: (value) {
+                    switch (value.toInt()) {
+                      case 0:
+                        return 'Gordura';
+                      case 1:
+                        return 'Músculo';
+                      default:
+                        return '';
+                    }
+                  },
+                ),
+              ),
+              // borderData: FlBorderData(
+              //   show: false,
+              //   border: Border.all(color: const Color(0xff37434d), width: 1),
               // ),
-              BarChartGroupData(
-                x: 1,
-                barRods: [
+              barGroups: [
+                BarChartGroupData(
+                  x: 0,
+                  barRods: [
+                    BarChartRodData(
+                      y: 70,
+                      borderRadius: BorderRadius.zero,
+                      width: 80,
+                      colors: [Colors.yellow],
+                    ),
+                  ],
+                ),
+                BarChartGroupData(x: 1, barRods: [
                   BarChartRodData(
-                    y: 25,
-                    colors: [Colors.green],
+                    y: 30,
+                    borderRadius: BorderRadius.zero,
+                    width: 80,
+                    colors: [Colors.red],
                   ),
-                ],
-                // showingTooltipIndicators: [0],
-              ),
-              BarChartGroupData(
-                x: 1,
-                barRods: [
-                  BarChartRodData(
-                    y: 70,
-                    colors: [Colors.yellow],
-                  ),
-                ],
-                // showingTooltipIndicators: [0],
-              ),
-            ],
+                ])
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-// void main() => runApp(MaterialApp(home: BarChartSample()));

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-class PieChartSample extends StatelessWidget {
+class ChartPie extends StatelessWidget {
   final String? title1;
   final String? title2;
   final double? value1;
   final double? value2;
 
-  PieChartSample({Key? key, this.title1, this.title2, this.value1, this.value2})
+  ChartPie({Key? key, this.title1, this.title2, this.value1, this.value2})
       : super(key: key);
 
   @override
@@ -24,7 +24,7 @@ class PieChartSample extends StatelessWidget {
               color: Colors.blue,
               value: value1, // Primeiro valor
               title: title1,
-              radius: 180,
+              radius: 120,
               titleStyle: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -34,7 +34,7 @@ class PieChartSample extends StatelessWidget {
               color: Colors.green,
               value: value2, // Segundo valor
               title: title2,
-              radius: 180,
+              radius: 120,
               titleStyle: TextStyle(
                   color: Colors.white,
                   fontSize: 18,

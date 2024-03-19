@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stfm_app/_core/colors_pattern.dart';
+import 'package:stfm_app/widget/ChartBar.dart';
+import 'package:stfm_app/widget/ChartPie.dart';
 import 'package:stfm_app/widget/InformationCollumnsTitle.dart';
 import 'package:stfm_app/widget/MeasureCell.dart';
 import 'package:stfm_app/widget/ProfileHeader.dart';
@@ -35,10 +37,10 @@ class _MyMeasureState extends State<MyMeasure> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "Minhas medidas",
+                            // textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 22, fontWeight: FontWeight.bold),
                           ),
@@ -48,9 +50,9 @@ class _MyMeasureState extends State<MyMeasure> {
                           )
                         ],
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 8),
                       Image.asset("assets/myBody.jpg"),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 8),
                       OutlinedButton(
                           style: OutlinedButton.styleFrom(
                               padding:
@@ -229,6 +231,7 @@ class _MyMeasureState extends State<MyMeasure> {
                 imageUrl: "assets/pernaEsq.png",
                 text1: "00/00/00",
                 text2: "104cm"),
+
           ],
         ),
       ),

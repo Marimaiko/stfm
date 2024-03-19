@@ -18,21 +18,22 @@ class TableContents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
       child: Row(
         children: [
           // Coluna 1: Descrição
           Expanded(
               flex: 2,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     description,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: ColorsPattern.darkgold,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24),
+                      color: ColorsPattern.darkgold,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   ),
                   const SizedBox(
                     height: 8,
@@ -69,11 +70,15 @@ class TableContents extends StatelessWidget {
           Expanded(
               flex: 2,
               child: Container(
-                padding: EdgeInsets.all(12.0),
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(10.0),
                 color: ColorsPattern.darkRed,
                 child: Text(
                   avaliation.toString(),
-                  style: TextStyle(color: ColorsPattern.darkgold, fontSize: 24),
+                  style: TextStyle(
+                    color: ColorsPattern.darkgold,
+                    fontSize: 24,
+                  ),
                 ),
               )),
         ],

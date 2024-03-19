@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stfm_app/screens/Login.dart';
+import 'package:stfm_app/screens/MyMeasure.dart';
+import 'package:stfm_app/screens/Profile.dart';
 
 enum Sections { Measure, Evolution, Menu }
 
@@ -15,12 +18,12 @@ class _ProfileButtonsState extends State<ProfileButtons> {
   @override
   Widget build(BuildContext context) {
     return SegmentedButton<Sections>(
-        segments: <ButtonSegment<Sections>>[
-          const ButtonSegment<Sections>(
+        segments: const <ButtonSegment<Sections>>[
+          ButtonSegment<Sections>(
               value: Sections.Measure, label: Text("Minhas medidas")),
-          const ButtonSegment(
+          ButtonSegment(
               value: Sections.Evolution, label: Text("Minha evolução")),
-          const ButtonSegment(value: Sections.Menu, label: Text("Meu cardápio"))
+          ButtonSegment(value: Sections.Menu, label: Text("Meu cardápio"))
         ],
         selected: <Sections>{
           _selectedSection
@@ -28,6 +31,7 @@ class _ProfileButtonsState extends State<ProfileButtons> {
         onSelectionChanged: (Set<Sections> newSelection) {
           setState(() {
             _selectedSection = newSelection.first;
+            _navigateToScreen(context);
           });
         },
         style: ButtonStyle(
@@ -44,5 +48,28 @@ class _ProfileButtonsState extends State<ProfileButtons> {
                 : Colors.black;
           }),
         ));
+  }
+
+  void _navigateToScreen(BuildContext context) {
+    switch (_selectedSection) {
+      case Sections.Measure:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MyMeasure()),
+        );
+        break;
+      case Sections.Evolution:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Login()),
+        );
+        break;
+      case Sections.Menu:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Profile()),
+        );
+        break;
+    }
   }
 }
